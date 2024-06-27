@@ -154,7 +154,10 @@ function App() {
 
   const columnHeader = (name: SortTarget) => {
     return (
-      <th onClick={() => setSort(getNewSort(name, sort))}>
+      <th
+        className="sticky-top"
+        onClick={() => setSort(getNewSort(name, sort))}
+      >
         {t(name as string)}
         {sort.target === name && (sort.direction > 0 ? "▼" : "▲")}
       </th>
@@ -337,7 +340,7 @@ function App() {
       </Row>
       <Row>
         <Col>
-          <Table hover responsive>
+          <Table hover>
             <thead>
               <tr>
                 {columnHeader("name")}
